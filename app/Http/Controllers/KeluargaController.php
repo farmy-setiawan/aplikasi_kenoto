@@ -115,4 +115,17 @@ class KeluargaController extends Controller
         //redirect to index
         return redirect()->route('keluarga.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
+
+    public function destroy($id): RedirectResponse
+    {
+        //get post by ID
+        $post = Keluarga::findOrFail($id);
+
+        
+        //delete post
+        $post->delete();
+
+        //redirect to index
+        return redirect()->route('keluarga.index')->with(['success' => 'Data Berhasil Dihapus!']);
+    }
 }

@@ -39,8 +39,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{asset('lte/dist/img/AdminLTELogo.jpg')}}" alt="KumpulKeluarga" height="200"
-                width="200">
+            <img class="animation__shake" src="{{ asset('lte/dist/img/AdminLTELogo.png') }}" alt="KumpulKeluarga"
+                height="200" width="400">
         </div>
 
         <!-- Navbar -->
@@ -66,54 +66,15 @@
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel ml-1 mt-3 pb-3 mb-3 d-flex">
-                    {{-- <div class="image">
+                    <div class="image">
                         <img src="{{asset ('lte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
-                    </div> --}}
-
-                    <div class="info">
-                        {{-- <a href="#" class="d-block">{{ Auth::user()->name }}</a> --}}
                     </div>
 
-                    <div class="row justify-content-md-center">
-                        <div class="card card-widget widget-user shadow-sm">
-                            <!-- Add the bg color to the header using any of the bg-* classes -->
-                            <div class="widget-user-header bg-info"
-                            style="background: url({{asset('lte/dist/img/photo1.jpg')}}) center center;">
-                            <span class="description-text">{{ Auth::user()->name }}
-                         <h4 class="widget-user-desc text-right">Member</h4>
-                       </div>
-
-                            {{-- <div class="widget-user-header bg-info">
-                                  <span class="description-text">{{ Auth::user()->name }}</span>
-                                <h5 class="widget-user-desc">Pengguna</h5>
-                            </div> --}}
-                            <div class="widget-user-image">
-                                <img class="img-circle" src="{{asset('/lte/dist/img/avatar5.png')}}" alt="User Avatar">
-                              </div>
-                            <div class="card-footer">
-                                {{-- <div class="row justify-content-md-center">
-                                    <div class="col-sm-6 border-right">
-                                        <div class="description-block">
-                                            <h5 class="description-header">3,200</h5>
-                                            <span class="description-text">UANG</span>
-                                        </div>
-                                        <!-- /.description-block -->
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-sm-6 ">
-                                        <div class="description-block">
-                                            <h5 class="description-header">13,000</h5>
-                                            <span class="description-text">ORANG</span>
-                                        </div>
-                                        <!-- /.description-block -->
-                                    </div>
-
-                                    <!-- /.col -->
-                                </div> --}}
-                                <!-- /.row -->
-                            </div>
-                        </div>
+                    <div class="info text-wrap">
+                        <p><a href="#" class="d-block">{{ Auth::user()->name }} (MEMBER)</a></p>
                     </div>
+
+                    
                 </div>
 
 

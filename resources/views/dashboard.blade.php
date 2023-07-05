@@ -39,7 +39,7 @@
                         </div> --}}
                 </div>
                 <div class="card-body">
-                    Hay User {{ Auth::user()->name }}
+                    <h2> Hai  <b> {{ Auth::user()->name }}</b>, Apakabar? Tetap Semangat ya !!!</h2>
                 </div>
                 <div class="col-sm">
 
@@ -57,7 +57,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <marquee>Selamat Menikmati</marquee>
+                    <marquee>Selamat Menikmati Kopi & Rokoknya...</marquee>
                 </div>
                 <!-- /.card-footer-->
             </div>

@@ -13,9 +13,20 @@
   <link rel="stylesheet" href="{{asset ('lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset ('lte/dist/css/adminlte.min.css')}}">
+
+  <style>
+    .login-form-container {
+    background-color: #005278;
+    position:fixed;
+       
+}
+  </style>
+
 </head>
 <body class="hold-transition login-page">
-   
+ <div class="login-form-container">
+  <img src="{{asset('lte/dist/img/AdminLTELogo.jpg')}}">
+</div>
 <div class="login-box">
   <div class="login-logo">
     <a href="#"><b>Apilkasi</b>  IHI KENOTO</a>

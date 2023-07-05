@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return redirect('/login');
 });
 
 Auth::routes();
@@ -26,5 +26,5 @@ Route::resource('/keluarga', \App\Http\Controllers\KeluargaController::class);
 
 Route::get('/logout', function (){
     Auth::logout();
-    return redirect('/home');
+    return redirect('/login');
 });

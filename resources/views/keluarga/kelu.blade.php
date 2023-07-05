@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Data Keluarga <b>{{ Auth::user()->name}}</b></h1>
+                        <h1 class="m-0">Data Keluarga <b>{{ Auth::user()->name }}</b></h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -77,23 +77,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($proposal as $d)
+                                        @forelse ($proposal as $d)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td><b>{{ $d->nama }}</b></td>
                                                 <td>@currency($d->jumlah)</td>
                                                 <td>
-                                                  <div class="d-grid gap-2 col-6 mx-auto">
-                                                    <a href="{{ route('keluarga.edit', $d->id) }}" class="btn btn-warning"><i class="fas fa-pen"></i>
-                                                        Edit</a>
-                                                    <a href="" class="btn btn-danger"><i
-                                                            class="fas fa-trash-alt"></i> Hapus</a>
-                                                  </div>
+                                                    <div class="d-grid gap-2 col-6 mx-auto">
+                                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                            action="{{ route('keluarga.destroy', $d->id) }}" method="POST">
+                                                            <a href="{{ route('keluarga.edit', $d->id) }}"
+                                                                class="btn btn-warning"><i class="fas fa-pen"></i>
+                                                                Edit</a>
+
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger"><i
+                                                                    class="fas fa-trash"></i> HAPUS</button>
+                                                        </form>
+                                                    </div>
                                                 </td>
 
-                                            </tr> 
-                                        @endforeach
-                                      {{-- <tfoot> 
+                                            </tr>
+                                            @empty
+                                            <div class="alert alert-danger">
+                                                Data Pengumpul Masih Kosong.
+                                            </div>
+                                            @endforelse
+                                        {{-- <tfoot> 
                                         <tr>
                                           <th>No</th>
                                           <th>Nama</th>
@@ -102,17 +113,19 @@
 
                                       </tr>
                                       </tfoot> --}}
-                                </table>
+                                     
+                                          
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
                             </div>
-                            <!-- /.card-body -->
+                            <!-- /.card -->
                         </div>
-                        <!-- /.card -->
+                        <!-- /.col -->
                     </div>
-                    <!-- /.col -->
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
-        </section>
-    </div>
-@endsection
+                <!-- /.container-fluid -->
+            </section>
+        </div>
+    @endsection
