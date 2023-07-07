@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->integer('jumlah');
-            $table->integer('id_keluarga');
+            $table->unsignedInteger('id_user');
             $table->timestamps();
         });
     }
