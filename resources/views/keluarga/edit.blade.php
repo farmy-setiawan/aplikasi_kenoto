@@ -9,14 +9,14 @@
                     <!-- left column -->
                     <div class="col-md-6">
                         <!-- general form elements -->
-                        <div class="card card-secondary">
+                        <div class="card card-warning">
                             <div class="ribbon-wrapper">
-                                <div class="ribbon bg-danger">
-                                    Input Data
+                                <div class="ribbon bg-secondary">
+                                    Edit Data
                                 </div>
                             </div>
                             <div class="card-header">
-                                <h3 class="card-title">Input Data</h3>
+                                <h3 class="card-title">Edit Data</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -52,7 +52,7 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-secondary">Submit</button>
+                                    <button type="submit" class="btn btn-secondary">SIMPAN</button>
                                     <button type="reset" class="btn btn-warning">RESET</button>
 
                                 </div>

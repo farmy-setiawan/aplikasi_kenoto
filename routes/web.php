@@ -19,7 +19,8 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-Auth::routes();
+// Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::resource('/keluarga', \App\Http\Controllers\KeluargaController::class);

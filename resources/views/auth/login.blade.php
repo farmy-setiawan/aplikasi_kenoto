@@ -42,7 +42,7 @@
 						Aplikasi IHI Kenoto
 					</span>
           
-					<img src="{{asset('logpage/images/img-01.png')}}" alt="IMG">
+					<img src="{{asset('logpage/images/logo.png')}}" alt="IMG">
           <center><strong>Copyright &copy; 2023.</strong><br>
           <strong>Farmy Setiawan Radjatadoe</strong></center>
 				</div>
@@ -99,12 +99,12 @@
 
 					<div class="text-center p-t-136">
         
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-warning">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
               Daftar Member Baru
             </button>
-          <div class="modal fade" id="modal-warning">
+          <div class="modal fade" id="modal-default">
             <div class="modal-dialog">
-              <div class="modal-content bg-warning">
+              <div class="modal-content bg-default">
                 <div class="modal-header">
                   <h4 class="modal-title">Perhatian !!!</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">

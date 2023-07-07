@@ -12,7 +12,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                            <li class="breadcrumb-item active">Input Data Keluarga</li>
+                            <li class="breadcrumb-item active">Input Data</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -87,12 +87,12 @@
                                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                             action="{{ route('keluarga.destroy', $d->id) }}" method="POST">
                                                             <a href="{{ route('keluarga.edit', $d->id) }}"
-                                                                class="btn btn-warning"><i class="fas fa-pen"></i>
+                                                                class="btn btn-xs btn-warning"><i class="fas fa-pen"></i>
                                                                 Edit</a>
 
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger"><i
+                                                            <button type="submit" class="btn btn-xs btn-danger"><i
                                                                     class="fas fa-trash"></i> HAPUS</button>
                                                         </form>
                                                     </div>
