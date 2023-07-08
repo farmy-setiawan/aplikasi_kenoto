@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return redirect('/login');
 });
@@ -24,7 +26,7 @@ Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::resource('/keluarga', \App\Http\Controllers\KeluargaController::class);
-
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
 Route::get('/logout', function (){
     Auth::logout();
     return redirect('/login');

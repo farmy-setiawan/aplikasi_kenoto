@@ -40,11 +40,11 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        <!-- Preloader -->
+        {{-- <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="{{ asset('lte/dist/img/AdminLTELogo.png') }}" alt="KumpulKeluarga"
                 height="200" width="400">
-        </div>
+        </div> --}}
 
         <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-olive navbar-dark">
@@ -80,7 +80,7 @@
                 <img src="{{asset('lte/dist/img/avatar5.png')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
-                    Logout
+                    <b><i>Logout</i></b>
                     <span class="float-right text-sm text-danger"><i class="fas fa-user"></i></i></span>
                   </h3>
                   <p class="text-sm">Keluar Dari Aplikasi</p>
@@ -143,7 +143,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('keluarga.show',Auth::user()->id ) }}" target="_blank" class="nav-link">
-                                <i class="nav-icon fa fa-plus"></i>
+                                <i class="nav-icon far fa-image"></i>
                                 <p>MONITOR</p>
                             </a>
                         </li>
@@ -246,7 +246,7 @@
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
-                "buttons": ["excel", "pdf", "print"]
+                "buttons": []
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({
                 "paging": true,

@@ -65,7 +65,9 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <a href="{{ route('keluarga.create') }}" class="btn btn-md btn-success mb-3">TAMBAH DATA</a>
+                                <a href="{{ route('keluarga.create') }}" class="btn btn-md btn-success mb-3" ><i class="fas fa-plus"></i> TAMBAH DATA</a>
+                                <a href="{{ url('generate-pdf') }}" class="btn btn-md btn-warning mb-3"><i class="fas fa-file-pdf"></i> CETAK PDF</a>
+                                
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
