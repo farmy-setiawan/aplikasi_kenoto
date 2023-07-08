@@ -37,159 +37,76 @@
       </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
 
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('lte/dist/img/AdminLTELogo.png') }}" alt="KumpulKeluarga"
-                height="200" width="400">
-        </div>
-
-        <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-olive navbar-dark">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/home" class="nav-link">Home</a>
-      </li>
-      {{-- <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('logout') }}" class="nav-link">Logout</a>
-      </li> --}}
-
-      
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      
-  
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <span class="float-left text-md text-default"><i class="fas fa-user"></i>  {{ Auth::user()->name }} (MEMBER)</i></span>   
-            
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <a href="{{ route('logout') }}" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="{{asset('lte/dist/img/avatar5.png')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Logout
-                    <span class="float-right text-sm text-danger"><i class="fas fa-user"></i></i></span>
-                  </h3>
-                  <p class="text-sm">Keluar Dari Aplikasi</p>
+        <div class="row">
+         
+          <!-- /.col -->
+          <div class="col-md">
+            <!-- Widget: user widget style 1 -->
+            <div class="card card-widget widget-user">
+              <!-- Add the bg color to the header using any of the bg-* classes -->
+              <div class="widget-user-header bg-success">
+                    <div class="ribbon-wrapper ribbon-xl">
+                              <div class="ribbon bg-danger text-xl">
+                                MONITOR
+                              </div>
+                            </div>
+                <h3 class="widget-user-username">PEMBERITAHUAN</h3>
+                <h5 class="widget-user-desc">HASIL KUMPUL KELUARGA</h5>
+              </div>
+              <div class="widget-user-image">
+                <img class="img-circle elevation-2" src="{{asset('lte/dist/img/avatar5.png')}}" alt="User Avatar">
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-sm-6 border-right">
+                    <div class="description-block">
+                      <h1>@currency($datas)</h1>
+                      <span class="description-text">TOTAL UANG YANG TERKUMPUL</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-6">
+                    <div class="description-block">
+                      <h1>{{$jum}}</h1>
+                      <span class="description-text">KELUARGA</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
                   
                 </div>
+                <!-- /.row -->
               </div>
-              <!-- Message End -->
-            </a>
-            
-            
-            
-        </li>
-        <!-- Notifications Dropdown Menu -->
-       
-      </ul>
-  </nav>
-  <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-5">
-            <!-- Brand Logo -->
-            <a href="#" class="brand-link">
-
-                <span class="brand-text font-weight-dark"> APLIKASI IHI KENOTO</span>
-            </a>
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                {{-- <div class="user-panel ml-1 mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{asset ('lte/dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image">
-                    </div>
-
-                    <div class="info text-wrap">
-                        <p><a href="#" class="d-block">{{ Auth::user()->name }} (MEMBER)</a></p>
-                    </div>
-
-                    
-                </div> --}}
-
-
-
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <li class="nav-header">DAFTAR MENU</li>
-                        <li class="nav-item">
-                            <a href="/home" class="nav-link">
-                                <i class="nav-icon fa fa-home"></i>
-                                <p>BERANDA</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/keluarga" class="nav-link">
-                                <i class="nav-icon fa fa-plus"></i>
-                                <p>INPUT DATA</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('keluarga.show',Auth::user()->id ) }}" target="_blank" class="nav-link">
-                                <i class="nav-icon fa fa-plus"></i>
-                                <p>MONITOR</p>
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a href="{{ route('logout') }}" class="nav-link">
-                                <i class="nav-icon fa fa-times"></i>
-                                <p>LOGOUT/KELUAR</p>
-                            </a>
-                        </li> --}}
-                    </ul>
-
-                </nav>
-                <!-- /.sidebar-menu -->
             </div>
-            <!-- /.sidebar -->
-        </aside>
+            <!-- /.widget-user -->
+          </div>
+          <!-- /.col -->
+          
+        </div>
+        <!-- /.row -->
 
 
-
-
-
-        <!-- Content Wrapper. Contains page content -->
-        @yield('content')
-        <!-- /.content-wrapper -->
-
-
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2023 <a href="#">Farmy Setiawan Radjatadoe</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Versi</b> 1.0.0
+       <!-- /.card-header -->
+       <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="position-relative bg-success" style="height: 50px">
+                <div class="ribbon-wrapper ribbon-sm">
+                  <div class="ribbon bg-danger text-sm">
+                    KATA HATI 
+                  </div>
+                </div>
+                <marquee><h2>Terima kasih buat basodara semua, yang telah memberikan dukungan dan DOA nya.</h2></marquee>
+              </div>
             </div>
-        </footer>
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
-    </div>
+          </div>
+          
+        </div>
+        <!-- /.card-body -->
 
 
-
-    <!-- Bootstrap 4 -->
+         <!-- Bootstrap 4 -->
     <script src="{{ asset('lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- jQuery -->
     <script src="{{ asset('lte/plugins/jquery/jquery.min.js') }}"></script>

@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Auth;
 class KeluargaController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    /**
      * index
      *
      * @return View
@@ -34,18 +44,41 @@ class KeluargaController extends Controller
         return view('keluarga.kelu', compact('proposal', 'datas', 'jum',));
     }
 
+    
+
 
     /**
      * create
      *
      * @return View
      */
-    public function create(): View
+    
+     public function create(): View
     {
         $user = Auth()->id();
         return view('keluarga.create', compact('user'));
     }
+/**
+     * show
+     *
+     * @param  mixed $id
+     * @return View
+     */
+    public function show(string $id): View
+    {
+        //get post by ID
+        $post = Keluarga::findOrFail($id);
+        $user = Auth()->id();
+        // $datas = Keluarga::sum('jumlah');
+        // $jum = Keluarga::count();
 
+        $datas = Keluarga::where('id_user', $user)->sum('jumlah');
+        $jum = Keluarga::where('id_user', $user)->count();
+
+        $proposal = Keluarga::where('id_user', $user)->latest()->get();
+        //render view with post
+        return view('keluarga.counter', compact('post','datas','jum'));
+    }
     /**
      * store
      *
